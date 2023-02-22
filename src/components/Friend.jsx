@@ -19,12 +19,13 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
 
-  const isFriend = friends && friends?.find((friend) => friend._id === friendId);
+  const isFriend =
+    friends && friends?.find((friend) => friend._id === friendId);
 
   const patchFriend = async () => {
     console.log("id", _id, "friend", friendId, "token", token);
     const response = await fetch(
-      `http://localhost:3001/users/${_id}/${friendId}`,
+      `http://rose-kingfisher-cuff.cyclic.app/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
