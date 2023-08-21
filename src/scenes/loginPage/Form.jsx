@@ -65,7 +65,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "http://rose-kingfisher-cuff.cyclic.app/auth/register",
+      "https://rose-kingfisher-cuff.cyclic.app/auth/register",
       {
         method: "POST",
         body: formData,
@@ -81,7 +81,7 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     // console.log("logged");
-    const loggedInResponse = await fetch("http://rose-kingfisher-cuff.cyclic.app/auth/login", {
+    const loggedInResponse = await fetch("https://rose-kingfisher-cuff.cyclic.app/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),
