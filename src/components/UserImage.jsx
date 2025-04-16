@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://rose-kingfisher-cuff.cyclic.app/assets/${image}`}
+        src={image}
       />
     </Box>
   );

@@ -1,7 +1,7 @@
 import { Typography, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
-
+import AdvertImg from "../../assets/cosmetic.jpg";
 
 const AdvertWidget = () => {
   const { palette } = useTheme();
@@ -21,10 +21,10 @@ const AdvertWidget = () => {
         width="100%"
         height="auto"
         alt="advert"
-        src="assets/cosmetic.jpg"
+        src={AdvertImg}
         style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
       />
-      <FlexBetween>
+      <FlexBetween style={{ gap: "1rem" }}>
         <Typography color={main}>MikaCosmetics</Typography>
         <Typography color={medium}>mikacosmetics.com</Typography>
       </FlexBetween>

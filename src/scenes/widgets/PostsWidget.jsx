@@ -9,13 +9,10 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const token = useSelector((state) => state.token);
 
   const getPosts = useCallback(async () => {
-    const response = await fetch(
-      "https://rose-kingfisher-cuff.cyclic.app/posts",
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      }
-    );
+    const response = await fetch("https://be-sociopedia.onrender.com/posts", {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    });
     const data = await response.json();
     console.log("posts", data);
     dispatch(setPosts({ posts: data }));
@@ -23,7 +20,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   const getUserPosts = useCallback(async () => {
     const response = await fetch(
-      `https://rose-kingfisher-cuff.cyclic.app/posts/${userId}/posts`,
+      `https://be-sociopedia.onrender.com/posts/${userId}/posts`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

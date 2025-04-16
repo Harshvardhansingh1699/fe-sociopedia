@@ -11,6 +11,8 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import TwitterIcon from "../../assets/twitter.png";
+import LinkedInIcon from "../../assets/linkedin.png";
 
 const UserWidget = ({ userId, picturePath }) => {
   const [user, setUser] = useState(null);
@@ -23,7 +25,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
   const getUSer = async () => {
     const response = await fetch(
-      `https://rose-kingfisher-cuff.cyclic.app/users/${userId}`,
+      `https://be-sociopedia.onrender.com/users/${userId}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -118,7 +120,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
         <FlexBetween gap="1rem" mb="0.5rem">
           <FlexBetween gap="1rem">
-            <img src="../assets/twitter.png" alt="twitter" />
+            <img src={TwitterIcon} alt="twitter" />
             <Box>
               <Typography cokor={main} fontWeight="500">
                 Twitter
@@ -131,7 +133,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
         <FlexBetween gap="1rem">
           <FlexBetween gap="1rem">
-            <img src="../assets/linkedin.png" alt="linkedin" />
+            <img src={LinkedInIcon} alt="linkedin" />
             <Box>
               <Typography cokor={main} fontWeight="500">
                 Linkedin

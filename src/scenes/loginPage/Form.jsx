@@ -15,7 +15,6 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
-import { color } from "@mui/system";
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -65,7 +64,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://rose-kingfisher-cuff.cyclic.app/auth/register",
+      "https://be-sociopedia.onrender.com/auth/register",
       {
         method: "POST",
         body: formData,
@@ -81,11 +80,14 @@ const Form = () => {
 
   const login = async (values, onSubmitProps) => {
     // console.log("logged");
-    const loggedInResponse = await fetch("https://rose-kingfisher-cuff.cyclic.app/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
+    const loggedInResponse = await fetch(
+      "https://be-sociopedia.onrender.com/auth/login",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      }
+    );
     // console.log(loggedInResponse);
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();

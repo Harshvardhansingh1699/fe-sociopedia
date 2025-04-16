@@ -14,9 +14,10 @@ const ProfilePage = () => {
   const token = useSelector((state) => state.token);
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
+  //https://rose-kingfisher-cuff.cyclic.app/users/
   const getUser = async () => {
     const response = await fetch(
-      `https://rose-kingfisher-cuff.cyclic.app/users/${userId}`,
+      `https://be-sociopedia.onrender.com/users/${userId}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

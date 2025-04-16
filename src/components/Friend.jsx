@@ -25,7 +25,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   const patchFriend = async () => {
     console.log("id", _id, "friend", friendId, "token", token);
     const response = await fetch(
-      `https://rose-kingfisher-cuff.cyclic.app/users/${_id}/${friendId}`,
+      `https://be-sociopedia.onrender.com/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
